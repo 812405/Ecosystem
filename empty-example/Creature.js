@@ -4,4 +4,9 @@ class Creature extends Vehicle {
         this.energy = energy;
         this.de = 0
     }
+    update() {
+        this.de = p5.Vector.dot(this.tAccel, this.tVel) * this.mass2d;
+        console.log(this.de);
+        this.updateVhc()
+    }
 }
