@@ -17,16 +17,13 @@ class Vehicle {
         this.sDist = sDist;//  desired sep
     }
     updateVhc() {
-        this.tAccel.limit(this.maxForce)
+        this.d = this.max
         this.tAccel.div(this.mass2d);
         this.tVel.add(this.tAccel);
+        this.tVel.limit(this.maxSpeed);
         this.tAccel.x = 0;
         this.tAccel.y = 0;
-        this.tVel.limit(this.maxSpeed);
         this.tPos.add(this.tVel);
-    }
-    prepAccel() {
-        this.tAccel.limit(this.max)
     }
     applyForce(force) {
         this.tAccel.add(force);
